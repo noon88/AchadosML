@@ -1,0 +1,199 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  background: #f7f7f7;
+  color: #333;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: #ffdb15;
+  padding: 15px 0;
+  box-shadow: 0 3px 10px #0002;
+  overflow-x: auto;
+}
+.header-content {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.navbar a:hover {
+  background: #fff5a6;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: url("mercado.png")
+    center/cover no-repeat;
+  height: 330px;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-shadow: 0 2px 5px #000;
+}
+
+.hero-text {
+  width: 90%;
+  max-width: 600px;
+  margin-left: 5%;
+}
+
+.hero-text h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* BTN */
+.btn {
+  background: #3483fa;
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #2966c2;
+}
+
+/* ===== CATEGORIAS ===== */
+.categoria {
+  padding: 50px 0;
+}
+
+.categoria h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  width: 90%;
+  margin: auto;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 12px #0001;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.preco {
+  margin: 10px 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+/* Fade-in + slide-up apenas para texto */
+.fade-text {
+  display: inline-block; /* garante que cada elemento se anime isoladamente */
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards; /* forwards mantém no final */
+  animation-delay: var(--delay, 0s);  /* opcional para delay sequencial */
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grid-produtos {
+  display: flex;               /* organiza horizontalmente */
+  gap: 20px;                   /* espaço entre os cards */
+  overflow-x: auto;            /* permite scroll */
+  padding: 10px 0;
+  scroll-snap-type: x mandatory; /* snap para cada card */
+}
+
+.grid-produtos::-webkit-scrollbar {
+  height: 8px;
+}
+
+.grid-produtos::-webkit-scrollbar-thumb {
+  background: #3483fa;
+  border-radius: 4px;
+}
+
+.card {
+  flex: 0 0 220px;            /* largura fixa, não encolhe */
+  scroll-snap-align: start;   /* encaixa no início ao rolar */
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 12px #0001;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
